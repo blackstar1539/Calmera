@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17142b">
+  <meta name="description" content="Calmera is a private daily space to check in, breathe, reflect, and find support.">
+  <title>Calmera — tune in to yourself</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Skip to the active tool</a>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" data-route="home" aria-label="Calmera home">
+        <svg viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="18"/><path d="M10 22c5-8 17-8 22 0M14 27c4-5 10-5 14 0M18 32c2-2 4-2 6 0"/></svg>
+        <span>calmera</span>
+      </a>
+      <p class="privacy-line"><span class="status-dot"></span>Private on this device</p>
+      <button class="mobile-menu" type="button" aria-expanded="false" aria-controls="station-nav">
+        <span></span><span></span><span></span><span class="sr-only">Open station menu</span>
+      </button>
+    </header>
+
+    <aside class="station-rail" id="station-nav" aria-label="Calmera stations">
+      <p class="rail-label">Your stations</p>
+      <nav>
+        <a href="#home" data-route="home" class="station-link active">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h3l2-5 4 10 2-5h5"/></svg><span>On air</span><b>87.7</b>
+        </a>
+        <a href="#mood" data-route="mood" class="station-link">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M8 14c2 2 6 2 8 0M9 9h.01M15 9h.01"/></svg><span>Check in</span><b>90.3</b>
+        </a>
+        <a href="#breathe" data-route="breathe" class="station-link">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9c3-5 13-5 16 0M6 14c3 4 9 4 12 0M9 18c2 1 4 1 6 0"/></svg><span>Breathe</span><b>94.8</b>
+        </a>
+        <a href="#journal" data-route="journal" class="station-link">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h10a2 2 0 0 1 2 2v14H8a2 2 0 0 1-2-2V4Z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>Journal</span><b>101.2</b>
+        </a>
+        <a href="#support" data-route="support" class="station-link">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s7-4 7-10a4 4 0 0 0-7-2 4 4 0 0 0-7 2c0 6 7 10 7 10Z"/></svg><span>Support</span><b>108.0</b>
+        </a>
+      </nav>
+      <div class="rail-footer">
+        <span>CALMERA FM</span>
+        <small>NO LOGIN · NO CLOUD</small>
+      </div>
+    </aside>
+
+    <main id="workspace" class="workspace" tabindex="-1">
+      <section class="view active" data-view="home" aria-labelledby="home-title">
+        <div class="home-grid">
+          <div class="tuner-stage">
+            <div class="broadcast-meta"><span>LIVE · YOUR SPACE</span><time id="current-time">--:--</time></div>
+            <div class="hero-copy">
+              <h1 id="home-title">What do you need<br>right now?</h1>
+              <p>Take one small step without streaks or pressure. Your activity stays on this device.</p>
+            </div>
+            <nav class="mobile-station-dock" aria-label="Quick station access">
+              <button type="button" data-jump="mood">Check in</button>
+              <button type="button" data-jump="breathe">Breathe</button>
+              <button type="button" data-jump="journal">Journal</button>
+              <button type="button" data-jump="support">Support</button>
+            </nav>
+            <div class="frequency" aria-hidden="true">
+              <div class="frequency-numbers"><span>87</span><span>90</span><span>94</span><span>98</span><span>102</span><span>106</span><span>108</span></div>
+              <div class="frequency-track"><div class="ticks"></div><span class="needle"></span></div>
+              <div class="signal-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <div class="tuner-actions">
+              <button class="primary-action" type="button" data-jump="mood">Check in with yourself <span>→</span></button>
+              <button class="text-action" type="button" data-jump="breathe">I just need a minute</button>
+            </div>
+          </div>
+
+          <aside class="daily-signal" aria-labelledby="signal-title">
+            <div class="signal-head"><span>Today’s signal</span><button id="new-affirmation" type="button" aria-label="Show another affirmation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M18 12a6 6 0 0 0-10-4L5 11M6 12a6 6 0 0 0 10 4l3-3"/></svg></button></div>
+            <blockquote id="affirmation">You don’t have to solve everything tonight.</blockquote>
+            <p>Tap the dial when you want a different thought.</p>
+            <div class="mini-dial" aria-hidden="true"><span></span></div>
+            <div class="quick-routes">
+              <button type="button" data-jump="journal"><span>Something on your mind?</span><b>Write it out →</b></button>
+              <button type="button" data-jump="support"><span>Need more support?</span><b>Find real help →</b></button>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" data-view="mood" aria-labelledby="mood-title" hidden>
+        <div class="section-heading"><div><h1 id="mood-title">Name the signal.</h1><p>No need to explain it perfectly. Pick what feels closest.</p></div><span class="frequency-badge">90.3 FM</span></div>
+        <div class="mood-layout">
+          <div class="mood-picker" role="group" aria-label="Choose your current mood">
+            <button data-mood="great" data-level="5"><span>●</span><b>Really good</b><small>energized, hopeful</small></button>
+            <button data-mood="okay" data-level="4"><span>●</span><b>Pretty okay</b><small>steady, content</small></button>
+            <button data-mood="mixed" data-level="3"><span>●</span><b>Mixed</b><small>a bit of everything</small></button>
+            <button data-mood="low" data-level="2"><span>●</span><b>Low</b><small>sad, lonely, drained</small></button>
+            <button data-mood="overwhelmed" data-level="1"><span>●</span><b>Overwhelmed</b><small>anxious, angry, stressed</small></button>
+          </div>
+          <div class="response-panel" aria-live="polite">
+            <span class="response-label">Waiting for your check-in</span>
+            <h2 id="mood-response">Whatever you’re feeling belongs here.</h2>
+            <p id="mood-suggestion">Choose a signal and Calmera will suggest one small next step.</p>
+            <button id="mood-next" class="primary-action compact" type="button" data-jump="breathe" disabled>Try a reset <span>→</span></button>
+          </div>
+        </div>
+        <div class="mood-history"><div><h2>Recent signals</h2><p>Only saved in this browser.</p></div><ol id="history-dots" class="history-dots"><li class="empty-history">No check-ins yet</li></ol></div>
+      </section>
+
+      <section class="view" data-view="breathe" aria-labelledby="breathe-title" hidden>
+        <div class="section-heading"><div><h1 id="breathe-title">Follow the frequency.</h1><p>A single 4–7–8 cycle. Stop whenever you need to.</p></div><span class="frequency-badge">94.8 FM</span></div>
+        <div class="breath-layout">
+          <div class="breath-visual" id="breath-visual">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+            <div class="breath-core"><span id="breath-count">Ready</span><b id="breath-phase">One quiet minute</b></div>
+          </div>
+          <div class="breath-controls">
+            <div class="breath-sequence"><span class="active">Inhale <b>4</b></span><span>Hold <b>7</b></span><span>Exhale <b>8</b></span></div>
+            <p id="breath-copy">Sit comfortably. Let your shoulders drop. This doesn’t need to be perfect.</p>
+            <div class="control-row"><button id="start-breathing" class="primary-action" type="button">Start one cycle <span>→</span></button><button id="stop-breathing" class="text-action" type="button" hidden>Stop</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" data-view="journal" aria-labelledby="journal-title" hidden>
+        <div class="section-heading"><div><h1 id="journal-title">Leave it on the page.</h1><p>Write freely. Your words stay on this device.</p></div><span class="frequency-badge">101.2 FM</span></div>
+        <div class="journal-layout">
+          <form id="journal-form" class="journal-composer">
+            <label for="journal-title-input">Give this thought a name</label>
+            <input id="journal-title-input" name="title" maxlength="80" placeholder="Tonight, I’m thinking about…" required>
+            <label for="journal-entry">What’s on your mind?</label>
+            <textarea id="journal-entry" name="entry" rows="9" maxlength="5000" placeholder="Start anywhere. No one else will read this." required></textarea>
+            <div class="composer-footer"><span id="char-count">0 / 5,000</span><button class="primary-action compact" type="submit">Save privately <span>→</span></button></div>
+          </form>
+          <aside class="journal-library">
+            <div class="library-head"><div><h2>Your entries</h2><p>Saved locally</p></div><div class="library-actions"><button id="export-txt" type="button">Export</button></div></div>
+            <label class="search-field" for="journal-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg><input id="journal-search" type="search" placeholder="Search your entries"></label>
+            <div id="journal-list" class="journal-list" aria-live="polite"></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view" data-view="support" aria-labelledby="support-title" hidden>
+        <div class="section-heading"><div><h1 id="support-title">You can share the weight.</h1><p>Small care ideas for today, plus real people when you need them.</p></div><span class="frequency-badge">108.0 FM</span></div>
+        <div class="support-layout">
+          <div class="care-list">
+            <article><h2>Look away from the screen for one full minute.</h2><p>Find five things you can see, four you can feel, and three you can hear.</p></article>
+            <article><h2>Step outside, wash your face, or hold something cool.</h2><p>Notice what the change feels like without expecting it to fix the whole moment.</p></article>
+            <article><h2>Send one honest sentence to someone safe.</h2><p>Try: “I’m having a rough moment. Can you stay with me for a bit?”</p></article>
+          </div>
+          <aside class="help-panel">
+            <h2>Talk to a real person</h2>
+            <p>If you’re in immediate danger, call your local emergency number.</p>
+            <a href="https://988lifeline.org/" target="_blank" rel="noopener"><span>US &amp; territories</span><b>Call or text 988</b><small>Suicide &amp; Crisis Lifeline · 24/7</small></a>
+            <a href="https://www.crisistextline.org/" target="_blank" rel="noopener"><span>US, Canada, UK &amp; Ireland</span><b>Crisis Text Line</b><small>Free text-based support</small></a>
+            <a href="https://findahelpline.com/" target="_blank" rel="noopener"><span>Worldwide</span><b>Find a local helpline</b><small>Verified support in 130+ countries</small></a>
+            <p class="disclaimer">Calmera is a self-care tool, not medical advice or a replacement for professional support.</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
